@@ -81,7 +81,10 @@ if __name__ == "__main__":
         }
 
         ?id skos:prefLabel ?label ;
-            skos:definition ?definition .
+            skos:definition ?definition ;
+            skos:inScheme ?concept_scheme .
+
+        FILTER(?concept_scheme = <http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e>)
     }
     ORDER BY DESC(?doc_count)
     """
